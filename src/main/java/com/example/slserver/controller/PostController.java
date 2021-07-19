@@ -1,4 +1,4 @@
-package com.example.slserver.controllers;
+package com.example.slserver.controller;
 
 import com.example.slserver.models.Post;
 import com.example.slserver.repo.PostRepo;
@@ -7,12 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("/post")
+@RestController
 public class PostController {
     private final PostRepo postRepo;
 
@@ -21,7 +20,8 @@ public class PostController {
         this.postRepo = postRepo;
     }
 
-    @GetMapping
+
+    @GetMapping("/post")
     public List<Post> getAllPost(){
         return postRepo.findAll();
     }

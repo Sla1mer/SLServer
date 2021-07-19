@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("post")
+@RequestMapping("/post")
 public class PostController {
     private final PostRepo postRepo;
 
